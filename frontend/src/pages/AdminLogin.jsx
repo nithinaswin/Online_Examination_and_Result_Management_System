@@ -43,6 +43,25 @@ export default function AdminLogin() {
 
         {error && <div className="alert-box alert-danger">{error}</div>}
 
+        <div style={{ background: '#f8fafc', border: '1px dashed #cbd5e1', borderRadius: '6px', padding: '10px 14px', marginBottom: '18px', fontSize: '12px', color: '#475569', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <div><strong>Email:</strong> admin@college.edu</div>
+            <div><strong>Password:</strong> AdminSecurePass123!</div>
+          </div>
+          <button
+            type="button"
+            className="btn btn-outline"
+            style={{ padding: '4px 10px', fontSize: '11px', whiteSpace: 'nowrap' }}
+            onClick={() => {
+              setEmail('admin@college.edu');
+              setPassword('AdminSecurePass123!');
+              setError('');
+            }}
+          >
+            Auto-fill
+          </button>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label" htmlFor="admin-email">Administrator Email</label>
