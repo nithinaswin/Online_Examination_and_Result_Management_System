@@ -23,7 +23,8 @@ export default function AdminLogin() {
       await loginAdmin(email, password);
       navigate('/admin/dashboard');
     } catch (err) {
-      setError(err.response?.data?.message || 'Invalid credentials');
+      const msg = err.response?.data?.message || err.message || 'Invalid credentials';
+      setError(msg);
     } finally {
       setLoading(false);
     }
