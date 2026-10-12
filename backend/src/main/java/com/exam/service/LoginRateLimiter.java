@@ -9,8 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class LoginRateLimiter {
 
-    private static final int MAX_FAILED_ATTEMPTS = 5;
-    private static final long LOCKOUT_DURATION_SECONDS = 300; // 5 minutes
+    private static final int MAX_FAILED_ATTEMPTS = 15;
+    private static final long LOCKOUT_DURATION_SECONDS = 15; // 15 seconds
 
     private static class AttemptTracker {
         int failedAttempts = 0;
